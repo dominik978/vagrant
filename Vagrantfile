@@ -6,17 +6,30 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure("2") do |config|
-  config.vm.define "alma" do |alma_config|
-    alma_config.vm.box = "almalinux/9"
-    alma_config.vm.box_version = "9.6.20250522"
-    alma_config.vm.hostname = "alma9"
-    alma_config.vm.provider "virtualbox" do |vb|
-      vb.name = "alma9"
+
+  config.vm.define "rocky" do |rocky_config|
+    rocky_config.vm.box = "bento/rockylinux-10"
+    rocky_config.vm.box_version = "202512.01.0"
+    rocky_config.vm.hostname = "rockylinux10"
+    rocky_config.vm.provider "virtualbox" do |vb|
+      vb.name = "rockylinux10"
       vb.cpus = 4
       vb.memory = 8192
     end
   end
+
+#  config.vm.define "rocky10" do |rocky_config|
+#    rocky_config.vm.box = "rockylinux/10"
+#    rocky_config.vm.box_version = "0.0.0"
+#    rocky_config.vm.hostname = "rocky10"
+#    rocky_config.vm.provider :libvirt do |libvirt|
+#      libvirt.cpus = 4
+#      libvirt.memory = 4096
+#    end
+#  end
+
 end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
