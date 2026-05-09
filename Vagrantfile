@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.define "alma" do |alma_config|
     alma_config.vm.box = "almalinux/10"
-    alma_config.vm.box_version = "10.1.20260318"
+    alma_config.vm.box_version = "10.1.20260508"
     alma_config.vm.hostname = "alma"
     alma_config.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 4
