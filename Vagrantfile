@@ -7,25 +7,16 @@
 # you're doing.
 Vagrant.configure("2") do |config|
 
-  config.vm.define "rocky" do |rocky_config|
-    rocky_config.vm.box = "bento/rockylinux-10"
-    rocky_config.vm.box_version = "202512.01.0"
-    rocky_config.vm.hostname = "rockylinux10"
-    rocky_config.vm.provider "virtualbox" do |vb|
-      vb.name = "rockylinux10"
-      vb.cpus = 4
-      vb.memory = 8192
-    end
-
   config.vm.define "alma" do |alma_config|
-    alma_config.vm.box = "almalinux/10"
-    alma_config.vm.box_version = "10.1.20260508"
+    alma_config.vm.box = "almalinux/9"
+    alma_config.vm.box_version = "9.8.20260526"
     alma_config.vm.hostname = "alma"
     alma_config.vm.provider :libvirt do |libvirt|
       libvirt.cpus = 4
-      libvirt.memory = 8192
+      libvirt.memory = 4096
       libvirt.machine_type = "q35"
       libvirt.driver = "kvm"
     end
-end
+  end
 
+end
